@@ -6,3 +6,9 @@ E:\CL.NWC\CL.NWC.UI\bin\Debug\CL.NWC.UI.exe
 E:\CL.NWC\CL.NWC.UI\bin\Debug\CL.NWC.UI.pdb
 E:\CL.NWC\CL.NWC.UI\obj\Debug\CL.NWC.UI.exe
 E:\CL.NWC\CL.NWC.UI\obj\Debug\CL.NWC.UI.pdb
+E:\CL.NWC\CL.NWC.UI\bin\Debug\DataBase\CL_NWC.accdb
+E:\CL.NWC\CL.NWC.UI\bin\Debug\CL.NWC.BLL.dll
+E:\CL.NWC\CL.NWC.UI\bin\Debug\CL.NWC.Model.dll
+E:\CL.NWC\CL.NWC.UI\bin\Debug\CL.NWC.BLL.pdb
+E:\CL.NWC\CL.NWC.UI\bin\Debug\CL.NWC.Model.pdb
+E:\CL.NWC\CL.NWC.UI\obj\Debug\CL.NWC.UI.Form1.resources
