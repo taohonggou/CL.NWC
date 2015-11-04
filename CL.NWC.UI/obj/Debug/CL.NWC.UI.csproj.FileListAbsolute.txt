@@ -1,1 +1,8 @@
 E:\CL.NWC\CL.NWC.UI\bin\Debug\CL.NWC.UI.exe.config
+E:\CL.NWC\CL.NWC.UI\obj\Debug\CL.NWC.UI.csprojResolveAssemblyReference.cache
+E:\CL.NWC\CL.NWC.UI\obj\Debug\CL.NWC.UI.Properties.Resources.resources
+E:\CL.NWC\CL.NWC.UI\obj\Debug\CL.NWC.UI.csproj.GenerateResource.Cache
+E:\CL.NWC\CL.NWC.UI\bin\Debug\CL.NWC.UI.exe
+E:\CL.NWC\CL.NWC.UI\bin\Debug\CL.NWC.UI.pdb
+E:\CL.NWC\CL.NWC.UI\obj\Debug\CL.NWC.UI.exe
+E:\CL.NWC\CL.NWC.UI\obj\Debug\CL.NWC.UI.pdb
