@@ -14,7 +14,7 @@ namespace CL.NWC.DAL
         /// <summary>
         /// 连接字符串
         /// </summary>
-        private static readonly string conStr = ConfigurationManager.ConnectionStrings["CL.NWC.UI.Properties.Settings.CL_NWCConnectionString"].ConnectionString;
+        private static readonly string conStr = ConfigurationManager.ConnectionStrings["conStr"].ConnectionString;
 
         /// <summary>
         /// 执行增删改
