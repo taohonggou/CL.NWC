@@ -12,6 +12,6 @@ namespace CL.NWC.Model
         public int UserID { get; set; }
         public int ProjectID { get; set; }
         public string Content { get; set; }
-        public DateTime RecordDate { get; set; }
+        public DateTime? RecordDate { get; set; }
     }
 }

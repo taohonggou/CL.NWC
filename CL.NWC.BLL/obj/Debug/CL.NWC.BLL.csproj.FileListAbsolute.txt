@@ -1,0 +1,9 @@
+E:\CL.NWC\CL.NWC.BLL\bin\Debug\CL.NWC.BLL.dll
+E:\CL.NWC\CL.NWC.BLL\bin\Debug\CL.NWC.BLL.pdb
+E:\CL.NWC\CL.NWC.BLL\bin\Debug\CL.NWC.DAL.dll
+E:\CL.NWC\CL.NWC.BLL\bin\Debug\CL.NWC.Model.dll
+E:\CL.NWC\CL.NWC.BLL\bin\Debug\CL.NWC.DAL.pdb
+E:\CL.NWC\CL.NWC.BLL\bin\Debug\CL.NWC.Model.pdb
+E:\CL.NWC\CL.NWC.BLL\obj\Debug\CL.NWC.BLL.csprojResolveAssemblyReference.cache
+E:\CL.NWC\CL.NWC.BLL\obj\Debug\CL.NWC.BLL.dll
+E:\CL.NWC\CL.NWC.BLL\obj\Debug\CL.NWC.BLL.pdb

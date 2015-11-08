@@ -5,7 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using CL.NWC.Model;
 using System.Data;
-using System.Data.SqlClient;
+using System.Data.OleDb;
+
 
 namespace CL.NWC.DAL
 {
@@ -114,6 +115,25 @@ namespace CL.NWC.DAL
             pro.Schedule = Convert.ToInt32(dr["Schedule"]);
             pro.ProjectID = Convert.ToInt32(dr["ProjectID"]);
             return pro;
+        }
+
+        public static int AddProject(Project pro)
+        {
+            string sql = "insert into projects (UserID,ForemanName,Phone,RecordDate,Address,Schedule,ShuiDate,NiDate,MuDate,YouDate,PredictCompleteDate) values (@UserID,@ForemanName,@Phone,@RecordDate,@Address,@Schedule,@ShuiDate,@NiDate,@MuDate,@YouDate,@PredictCompleteDate)";
+            OleDbParameter [] param = { 
+                           new OleDbParameter("@UserID",pro.UserID),
+                           new OleDbParameter("@ForemanName",pro.ForemanName),
+                           new OleDbParameter("@Phone",pro.Phone),
+                           new OleDbParameter("@RecordDate",pro.RecordDate),
+                           new OleDbParameter("@Address",pro.Address),
+                           new OleDbParameter("@Schedule",pro.Schedule),
+                           new OleDbParameter("@ShuiDate",pro.ShuiDate),
+                           new OleDbParameter("@NiDate",pro.NiDate),
+                           new OleDbParameter("@MuDate",pro.MuDate),
+                           new OleDbParameter("@YouDate",pro.YouDate),
+                           new OleDbParameter("@PredictCompleteDate",pro.PredictCompleteDate)
+                                   };
+            return AccSqlHelper.ExecuteNonQuery(sql, param);
         }
     }
 }

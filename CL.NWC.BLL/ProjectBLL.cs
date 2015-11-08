@@ -15,5 +15,11 @@ namespace CL.NWC.BLL
          {
              return ProjectDAL.LoadProject();
          }
+
+         public static bool AddProject(Project pro)
+         {
+
+             return ProjectDAL.AddProject(pro) > 0 ? true : false;
+         }
     }
 }
