@@ -100,16 +100,25 @@ namespace CL.NWC.DAL
         /// <returns>返回DataTable</returns>
         public static DataTable ExecuteTable(string sql, params OleDbParameter[] param)
         {
-            DataTable dt = new DataTable();
-            using (OleDbDataAdapter oda = new OleDbDataAdapter(sql, conStr))
+            try
             {
-                if (param != null)
+                DataTable dt = new DataTable();
+                using (OleDbDataAdapter oda = new OleDbDataAdapter(sql, conStr))
                 {
-                    oda.SelectCommand.Parameters.AddRange(param);
+                    if (param != null)
+                    {
+                        oda.SelectCommand.Parameters.AddRange(param);
+                    }
+                    oda.Fill(dt);
                 }
-                oda.Fill(dt);
+                return dt;
             }
-            return dt;
+            catch 
+            {
+                
+                throw;
+            }
+            
         }
     }
 }

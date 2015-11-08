@@ -14,11 +14,11 @@ namespace CL.NWC.Model
         public string Phone { get; set; }
         public int Schedule { get; set; }
         public string Address { get; set; }
-        public DateTime RecordDate { get; set; }
-        public DateTime ShuiDate { get; set; }
-        public DateTime NiDate { get; set; }
-        public DateTime MuDate { get; set; }
-        public DateTime YouDate { get; set; }
-        public DateTime PredictCompleteDate { get; set; }
+        public DateTime? RecordDate { get; set; }
+        public DateTime? ShuiDate { get; set; }
+        public DateTime? NiDate { get; set; }
+        public DateTime? MuDate { get; set; }
+        public DateTime? YouDate { get; set; }
+        public DateTime? PredictCompleteDate { get; set; }
     }
 }
