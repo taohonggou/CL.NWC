@@ -33,8 +33,8 @@ namespace CL.NWC.DAL
                     {
                         cmd.Parameters.AddRange(param);
                     }
-                    int i = cmd.ExecuteNonQuery();
-                    return i;
+                    return  cmd.ExecuteNonQuery();
+                    
                 }
             }
         }

@@ -124,14 +124,14 @@ namespace CL.NWC.DAL
                            new OleDbParameter("@UserID",pro.UserID),
                            new OleDbParameter("@ForemanName",pro.ForemanName),
                            new OleDbParameter("@Phone",pro.Phone),
-                           new OleDbParameter("@RecordDate",pro.RecordDate),
+                           new OleDbParameter("@RecordDate",OleDbType.DBDate){Value=pro.RecordDate==null?null:pro.RecordDate},
                            new OleDbParameter("@Address",pro.Address),
                            new OleDbParameter("@Schedule",pro.Schedule),
-                           new OleDbParameter("@ShuiDate",pro.ShuiDate),
-                           new OleDbParameter("@NiDate",pro.NiDate),
-                           new OleDbParameter("@MuDate",pro.MuDate),
-                           new OleDbParameter("@YouDate",pro.YouDate),
-                           new OleDbParameter("@PredictCompleteDate",pro.PredictCompleteDate)
+                           new OleDbParameter("@ShuiDate",OleDbType.DBDate){Value=pro.ShuiDate},
+                           new OleDbParameter("@NiDate",OleDbType.DBDate){Value=pro.NiDate},
+                           new OleDbParameter("@MuDate",OleDbType.DBDate){Value=pro.MuDate},
+                           new OleDbParameter("@YouDate",OleDbType.DBDate){Value=pro.YouDate},
+                           new OleDbParameter("@PredictCompleteDate",OleDbType.DBDate){Value=pro.PredictCompleteDate}
                                    };
             return AccSqlHelper.ExecuteNonQuery(sql, param);
         }

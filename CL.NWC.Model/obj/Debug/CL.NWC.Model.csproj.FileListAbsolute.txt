@@ -1,5 +1,4 @@
 E:\CL.NWC\CL.NWC.Model\bin\Debug\CL.NWC.Model.dll
 E:\CL.NWC\CL.NWC.Model\bin\Debug\CL.NWC.Model.pdb
-E:\CL.NWC\CL.NWC.Model\obj\Debug\CL.NWC.Model.csprojResolveAssemblyReference.cache
 E:\CL.NWC\CL.NWC.Model\obj\Debug\CL.NWC.Model.dll
 E:\CL.NWC\CL.NWC.Model\obj\Debug\CL.NWC.Model.pdb
