@@ -29,7 +29,7 @@ namespace CL.NWC.UI
             ShowDate();
             cmbSchedule.SelectedItem = "还没开工";
         }
-        //给时间空间显示默认时间
+        //给时间控件显示默认时间
         private void ShowDate()
         {
             DateTimePicker dt = new DateTimePicker();
@@ -37,7 +37,7 @@ namespace CL.NWC.UI
             dtMuDate.Value = date;
             dtNiDate.Value = date;
             dtPredictCompleteDate.Value = date;
-            dtRecordDate.Value = date;
+            
             dtShuiDate.Value = date;
             dtYouDate.Value = date;
         }
@@ -85,7 +85,7 @@ namespace CL.NWC.UI
             }
             
             pro.Schedule = aaa[cmbSchedule.SelectedIndex];
-            if (dtRecordDate.Value == dtShuiDate.MinDate)
+            if (dtShuiDate.Value == dtShuiDate.MinDate)
             {
                 pro.ShuiDate = null;
             }

@@ -119,21 +119,60 @@ namespace CL.NWC.DAL
 
         public static int AddProject(Project pro)
         {
-            string sql = "insert into projects (UserID,ForemanName,Phone,RecordDate,Address,Schedule,ShuiDate,NiDate,MuDate,YouDate,PredictCompleteDate) values (@UserID,@ForemanName,@Phone,@RecordDate,@Address,@Schedule,@ShuiDate,@NiDate,@MuDate,@YouDate,@PredictCompleteDate)";
-            OleDbParameter [] param = { 
+            StringBuilder sqlStart = new StringBuilder();
+            StringBuilder sqlEnd = new StringBuilder();
+            sqlStart.Append("insert into projects (UserID,ForemanName,Phone,RecordDate,Address,Schedule ");
+            sqlEnd.Append(" values (@UserID,@ForemanName,@Phone,@RecordDate,@Address,@Schedule");
+            List<OleDbParameter> list = new List<OleDbParameter>();
+            OleDbParameter[] param = { 
                            new OleDbParameter("@UserID",pro.UserID),
                            new OleDbParameter("@ForemanName",pro.ForemanName),
                            new OleDbParameter("@Phone",pro.Phone),
-                           new OleDbParameter("@RecordDate",OleDbType.DBDate){Value=pro.RecordDate==null?null:pro.RecordDate},
+                           new OleDbParameter("@RecordDate",OleDbType.DBDate){Value=pro.RecordDate},
                            new OleDbParameter("@Address",pro.Address),
-                           new OleDbParameter("@Schedule",pro.Schedule),
-                           new OleDbParameter("@ShuiDate",OleDbType.DBDate){Value=pro.ShuiDate},
-                           new OleDbParameter("@NiDate",OleDbType.DBDate){Value=pro.NiDate},
-                           new OleDbParameter("@MuDate",OleDbType.DBDate){Value=pro.MuDate},
-                           new OleDbParameter("@YouDate",OleDbType.DBDate){Value=pro.YouDate},
-                           new OleDbParameter("@PredictCompleteDate",OleDbType.DBDate){Value=pro.PredictCompleteDate}
-                                   };
-            return AccSqlHelper.ExecuteNonQuery(sql, param);
+                           new OleDbParameter("@Schedule",pro.Schedule)
+                                      };
+            list.AddRange(param);
+            if (!CheckDateIsNull(pro.ShuiDate))
+            {
+                sqlStart.Append(" ,ShuiDate ");
+                sqlEnd.Append(" ,@ShuiDate ");
+                list.Add(new OleDbParameter("@ShuiDate",pro.ShuiDate));
+            }
+            if (!CheckDateIsNull(pro.NiDate))
+            {
+                sqlStart.Append(" ,NiDate ");
+                sqlEnd.Append(" ,@NiDate ");
+                list.Add(new OleDbParameter("@NiDate", pro.NiDate));
+            }
+            if (!CheckDateIsNull(pro.MuDate))
+            {
+                sqlStart.Append(" ,MuDate ");
+                sqlEnd.Append(" ,@MuDate ");
+                list.Add(new OleDbParameter("@MuDate", pro.MuDate));
+            }
+            if (!CheckDateIsNull(pro.YouDate))
+            {
+                sqlStart.Append(" ,YouDate ");
+                sqlEnd.Append(" ,@YouDate ");
+                list.Add(new OleDbParameter("@YouDate", pro.YouDate));
+            }
+            if (!CheckDateIsNull(pro.PredictCompleteDate))
+            {
+                sqlStart.Append(" ,PredictCompleteDate ");
+                sqlEnd.Append(" ,@PredictCompleteDate ");
+                list.Add(new OleDbParameter("@PredictCompleteDate", pro.PredictCompleteDate));
+            }
+            sqlStart.Append(" )");
+            sqlEnd.Append(" )");
+            string sql = sqlStart.Append(sqlEnd).ToString();
+            OleDbParameter[] par = list.ToArray();
+            return AccSqlHelper.ExecuteNonQuery(sql, par);
+        }
+
+        private static bool CheckDateIsNull(DateTime? dt)
+        {
+            return dt == null;
         }
     }
 }
