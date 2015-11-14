@@ -26,7 +26,7 @@ namespace CL.NWC.UI
 
         private void AddProject_Load(object sender, EventArgs e)
         {
-            ShowDate();
+            BindUser();
             cmbSchedule.SelectedItem = "还没开工";
         }
         //给时间控件显示默认时间
@@ -42,68 +42,51 @@ namespace CL.NWC.UI
             dtYouDate.Value = date;
         }
 
-        int [] aaa={-1,1,2,3,4,0};
+        int [] jinDu={-1,1,2,3,4,0};
         private void btnAdd_Click(object sender, EventArgs e)
         {
             Project pro = new Project();
-            pro.Address = txtAddress.Text;
-            pro.ForemanName = txtForemanName.Text;
-            if (dtMuDate.Value==dtMuDate.MinDate)
+            pro.Address = txtAddress.Text.Trim() ;
+            if (txtForemanName.Text=="")
             {
-                pro.MuDate = null;
+                MessageBox.Show("没有输入工长姓名");
+                txtForemanName.Focus();
+                return;
             }
-            else
+            pro.ForemanName = txtForemanName.Text.Trim();
+            if (dtMuDate.Checked)
             {
                 pro.MuDate = dtMuDate.Value;
             }
-
-            if (dtNiDate.Value == dtNiDate.MinDate)
-            {
-                pro.NiDate = null;
-            }
-            else
+            if (dtNiDate.Checked)
             {
                 pro.NiDate = dtNiDate.Value;
             }
             pro.Phone = txtPhone.Text;
 
-            if (dtPredictCompleteDate.Value == dtPredictCompleteDate.MinDate)
-            {
-                pro.PredictCompleteDate = null;
-            }
-            else
+            if (dtPredictCompleteDate.Checked)
             {
                 pro.PredictCompleteDate = dtPredictCompleteDate.Value;
             }
-            if (dtRecordDate.Value == dtRecordDate.MinDate)
-            {
-                pro.RecordDate = null;
-            }
-            else
+            if (dtRecordDate.Checked )
             {
                 pro.RecordDate = dtRecordDate.Value;
             }
-            
-            pro.Schedule = aaa[cmbSchedule.SelectedIndex];
-            if (dtShuiDate.Value == dtShuiDate.MinDate)
-            {
-                pro.ShuiDate = null;
-            }
-            else
+            pro.Schedule = jinDu[cmbSchedule.SelectedIndex];
+            if (dtShuiDate.Checked)
             {
                 pro.ShuiDate = dtShuiDate.Value;
             }
             
-            pro.UserID = 1;
-            if (dtYouDate.Value == dtYouDate.MinDate)
-            {
-                pro.YouDate = null;
-            }
-            else
+            pro.UserID =(int)cmbUser.SelectedValue;
+            if (dtYouDate.Checked)
             {
                 pro.YouDate = dtYouDate.Value;
             }
-            
+            if (dtWanDate.Checked)
+            {
+                pro.WanDate = dtWanDate.Value;
+            }
             if (ProjectBLL.AddProject(pro))
             {
                 MessageBox.Show("添加成功");
@@ -112,6 +95,16 @@ namespace CL.NWC.UI
             {
                 MessageBox.Show("添加失败");
             }
+        }
+
+        //将用户与控件绑定
+        private void BindUser()
+        {
+            List<UserInfo> list = UserInfoBLL.GetAllUser();
+            cmbUser.DataSource = list;
+            cmbUser.DisplayMember = "UserName";
+            cmbUser.ValueMember = "UserID";
+            cmbUser.SelectedItem = list[0];
         }
     }
 }

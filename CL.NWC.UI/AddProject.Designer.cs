@@ -40,7 +40,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.txtForemanName = new System.Windows.Forms.TextBox();
-            this.txtSalesman = new System.Windows.Forms.TextBox();
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.dtPredictCompleteDate = new System.Windows.Forms.DateTimePicker();
@@ -51,6 +50,9 @@
             this.dtMuDate = new System.Windows.Forms.DateTimePicker();
             this.dtYouDate = new System.Windows.Forms.DateTimePicker();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.cmbUser = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.dtWanDate = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // label1
@@ -160,14 +162,6 @@
             this.txtForemanName.Size = new System.Drawing.Size(121, 21);
             this.txtForemanName.TabIndex = 0;
             // 
-            // txtSalesman
-            // 
-            this.txtSalesman.Location = new System.Drawing.Point(152, 74);
-            this.txtSalesman.Name = "txtSalesman";
-            this.txtSalesman.Size = new System.Drawing.Size(121, 21);
-            this.txtSalesman.TabIndex = 1;
-            this.txtSalesman.Text = "1";
-            // 
             // txtPhone
             // 
             this.txtPhone.Location = new System.Drawing.Point(152, 109);
@@ -184,11 +178,14 @@
             // 
             // dtPredictCompleteDate
             // 
+            this.dtPredictCompleteDate.Checked = false;
+            this.dtPredictCompleteDate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtPredictCompleteDate.Location = new System.Drawing.Point(152, 264);
             this.dtPredictCompleteDate.Name = "dtPredictCompleteDate";
+            this.dtPredictCompleteDate.ShowCheckBox = true;
             this.dtPredictCompleteDate.Size = new System.Drawing.Size(121, 21);
             this.dtPredictCompleteDate.TabIndex = 6;
-            this.dtPredictCompleteDate.Value = new System.DateTime(1753, 2, 15, 0, 0, 0, 0);
+            this.dtPredictCompleteDate.Value = new System.DateTime(2015, 11, 14, 15, 30, 30, 0);
             // 
             // cmbSchedule
             // 
@@ -207,47 +204,62 @@
             // 
             // dtRecordDate
             // 
+            this.dtRecordDate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtRecordDate.Location = new System.Drawing.Point(152, 151);
             this.dtRecordDate.Name = "dtRecordDate";
+            this.dtRecordDate.ShowCheckBox = true;
             this.dtRecordDate.Size = new System.Drawing.Size(121, 21);
             this.dtRecordDate.TabIndex = 3;
-            this.dtRecordDate.Value = new System.DateTime(2015, 11, 11, 0, 0, 0, 0);
+            this.dtRecordDate.Value = new System.DateTime(2015, 11, 14, 0, 0, 0, 0);
             // 
             // dtShuiDate
             // 
+            this.dtShuiDate.Checked = false;
+            this.dtShuiDate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dtShuiDate.CustomFormat = "";
             this.dtShuiDate.Location = new System.Drawing.Point(152, 307);
             this.dtShuiDate.Name = "dtShuiDate";
+            this.dtShuiDate.ShowCheckBox = true;
             this.dtShuiDate.Size = new System.Drawing.Size(121, 21);
             this.dtShuiDate.TabIndex = 7;
-            this.dtShuiDate.Value = new System.DateTime(1753, 1, 18, 0, 0, 0, 0);
+            this.dtShuiDate.Value = new System.DateTime(2015, 11, 14, 0, 0, 0, 0);
             // 
             // dtNiDate
             // 
+            this.dtNiDate.Checked = false;
+            this.dtNiDate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtNiDate.Location = new System.Drawing.Point(152, 350);
             this.dtNiDate.Name = "dtNiDate";
+            this.dtNiDate.ShowCheckBox = true;
             this.dtNiDate.Size = new System.Drawing.Size(121, 21);
             this.dtNiDate.TabIndex = 8;
-            this.dtNiDate.Value = new System.DateTime(1753, 1, 18, 0, 0, 0, 0);
+            this.dtNiDate.Value = new System.DateTime(2015, 11, 14, 0, 0, 0, 0);
             // 
             // dtMuDate
             // 
+            this.dtMuDate.Checked = false;
+            this.dtMuDate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtMuDate.Location = new System.Drawing.Point(152, 398);
             this.dtMuDate.Name = "dtMuDate";
+            this.dtMuDate.ShowCheckBox = true;
             this.dtMuDate.Size = new System.Drawing.Size(121, 21);
             this.dtMuDate.TabIndex = 9;
-            this.dtMuDate.Value = new System.DateTime(1753, 1, 23, 0, 0, 0, 0);
+            this.dtMuDate.Value = new System.DateTime(2015, 11, 14, 0, 0, 0, 0);
             // 
             // dtYouDate
             // 
+            this.dtYouDate.Checked = false;
+            this.dtYouDate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtYouDate.Location = new System.Drawing.Point(152, 444);
             this.dtYouDate.Name = "dtYouDate";
+            this.dtYouDate.ShowCheckBox = true;
             this.dtYouDate.Size = new System.Drawing.Size(121, 21);
             this.dtYouDate.TabIndex = 10;
-            this.dtYouDate.Value = new System.DateTime(1753, 1, 27, 0, 0, 0, 0);
+            this.dtYouDate.Value = new System.DateTime(2015, 11, 14, 0, 0, 0, 0);
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(117, 506);
+            this.btnAdd.Location = new System.Drawing.Point(123, 534);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 11;
@@ -255,11 +267,42 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
+            // cmbUser
+            // 
+            this.cmbUser.FormattingEnabled = true;
+            this.cmbUser.Location = new System.Drawing.Point(152, 77);
+            this.cmbUser.Name = "cmbUser";
+            this.cmbUser.Size = new System.Drawing.Size(121, 20);
+            this.cmbUser.TabIndex = 12;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(61, 492);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(17, 12);
+            this.label12.TabIndex = 13;
+            this.label12.Text = "完";
+            // 
+            // dtWanDate
+            // 
+            this.dtWanDate.Checked = false;
+            this.dtWanDate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dtWanDate.Location = new System.Drawing.Point(152, 492);
+            this.dtWanDate.Name = "dtWanDate";
+            this.dtWanDate.ShowCheckBox = true;
+            this.dtWanDate.Size = new System.Drawing.Size(121, 21);
+            this.dtWanDate.TabIndex = 14;
+            this.dtWanDate.Value = new System.DateTime(2015, 11, 14, 18, 14, 59, 0);
+            // 
             // AddProject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(350, 605);
+            this.Controls.Add(this.dtWanDate);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.cmbUser);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.cmbSchedule);
             this.Controls.Add(this.dtRecordDate);
@@ -270,7 +313,6 @@
             this.Controls.Add(this.dtPredictCompleteDate);
             this.Controls.Add(this.txtAddress);
             this.Controls.Add(this.txtPhone);
-            this.Controls.Add(this.txtSalesman);
             this.Controls.Add(this.txtForemanName);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
@@ -284,6 +326,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "AddProject";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddProject";
             this.Load += new System.EventHandler(this.AddProject_Load);
             this.ResumeLayout(false);
@@ -305,16 +348,18 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtForemanName;
-        private System.Windows.Forms.TextBox txtSalesman;
         private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.DateTimePicker dtPredictCompleteDate;
         private System.Windows.Forms.ComboBox cmbSchedule;
         private System.Windows.Forms.DateTimePicker dtRecordDate;
-        private System.Windows.Forms.DateTimePicker dtShuiDate;
         private System.Windows.Forms.DateTimePicker dtNiDate;
         private System.Windows.Forms.DateTimePicker dtMuDate;
         private System.Windows.Forms.DateTimePicker dtYouDate;
         private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.DateTimePicker dtShuiDate;
+        private System.Windows.Forms.ComboBox cmbUser;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.DateTimePicker dtWanDate;
     }
 }

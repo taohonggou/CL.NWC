@@ -15,7 +15,7 @@ namespace CL.NWC.DAL
         public static List<Project> LoadProject()
         {
             List<Project> list = new List<Project>();
-            string sql = "select * from Projects ";
+            string sql = "select * from Projects order by  RecordDate desc ";
             DataTable dt = AccSqlHelper.ExecuteTable(sql);
             foreach (DataRow dr in dt.Rows)
             {
@@ -23,6 +23,8 @@ namespace CL.NWC.DAL
             }
             return list;
         }
+        //-1还没有开工  0表示完工  1水  2泥  3木  4油
+        public static string[] arrSchedule = { "完工", "水", "泥", "木", "油" };
 
         public static Project DRToProject(DataRow dr)
         {
@@ -85,7 +87,7 @@ namespace CL.NWC.DAL
             else
             {
                 pro.PredictCompleteDate = Convert.ToDateTime(dr["PredictCompleteDate"]);
-            } 
+            }
             if (dr["NiDate"] == null || dr["NiDate"].ToString().Equals(""))
             {
                 pro.NiDate = null;
@@ -111,8 +113,18 @@ namespace CL.NWC.DAL
             {
                 pro.YouDate = Convert.ToDateTime(dr["YouDate"]);
             }
+            if (dr["WanDate"] == null || dr["WanDate"].ToString().Equals(""))
+            {
+                pro.WanDate = null;
+            }
+            else
+            {
+                pro.WanDate = Convert.ToDateTime(dr["WanDate"]);
+            }
             pro.UserID = Convert.ToInt32(dr["UserID"]);
+            pro.UserName = UserInfoDAL.GetUserByUserID(pro.UserID).UserName;
             pro.Schedule = Convert.ToInt32(dr["Schedule"]);
+            pro.SchedeleName = pro.Schedule == -1 ? "还没有开工" : arrSchedule[pro.Schedule];
             pro.ProjectID = Convert.ToInt32(dr["ProjectID"]);
             return pro;
         }
@@ -137,7 +149,7 @@ namespace CL.NWC.DAL
             {
                 sqlStart.Append(" ,ShuiDate ");
                 sqlEnd.Append(" ,@ShuiDate ");
-                list.Add(new OleDbParameter("@ShuiDate",pro.ShuiDate));
+                list.Add(new OleDbParameter("@ShuiDate", pro.ShuiDate));
             }
             if (!CheckDateIsNull(pro.NiDate))
             {
@@ -157,6 +169,12 @@ namespace CL.NWC.DAL
                 sqlEnd.Append(" ,@YouDate ");
                 list.Add(new OleDbParameter("@YouDate", pro.YouDate));
             }
+            if (!CheckDateIsNull(pro.WanDate))
+            {
+                sqlStart.Append(" ,WanDate ");
+                sqlEnd.Append(" ,@WanDate ");
+                list.Add(new OleDbParameter("@WanDate", pro.WanDate));
+            }
             if (!CheckDateIsNull(pro.PredictCompleteDate))
             {
                 sqlStart.Append(" ,PredictCompleteDate ");
@@ -174,5 +192,10 @@ namespace CL.NWC.DAL
         {
             return dt == null;
         }
+
+        //public static List<Project> Search()
+        //{
+
+        //}
     }
 }

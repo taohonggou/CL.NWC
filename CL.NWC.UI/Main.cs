@@ -22,10 +22,26 @@ namespace CL.NWC.UI
         private void Main_Load(object sender, EventArgs e)
         {
             // TODO:  这行代码将数据加载到表“cL_NWCDataSet.Projects”中。您可以根据需要移动或删除它。
-            this.projectsTableAdapter.Fill(this.cL_NWCDataSet.Projects);
-            ProjectBLL.LoadProject();    
+            //this.projectsTableAdapter.Fill(this.cL_NWCDataSet.Projects);
+            //ProjectBLL.LoadProject();    
+            BindDgvProject();
         }
 
+        /// <summary>
+        /// 显示添加添加工程窗口
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnAddProject_Click(object sender, EventArgs e)
+        {
+            AddProject pro = new AddProject();
+            pro.ShowDialog();
+        }
 
+        private void BindDgvProject()
+        {
+            List<Project> list = ProjectBLL.LoadProject();
+            dgvProject.DataSource = list;
+        }
     }
 }
