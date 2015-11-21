@@ -111,6 +111,7 @@ namespace CL.NWC.UI
             }
             if (dtRecordDate.Checked )
             {
+                pro.Schedule = -1;
                 pro.RecordDate = dtRecordDate.Value;
             }
             if (dtShuiDate.Checked)
@@ -136,6 +137,7 @@ namespace CL.NWC.UI
             }
             if (dtWanDate.Checked)
             {
+                pro.Schedule = 0;
                 pro.WanDate = dtWanDate.Value;
             }
             if (flag==1)

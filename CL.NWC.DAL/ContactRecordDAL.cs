@@ -72,5 +72,11 @@ namespace CL.NWC.DAL
                                      };
             return AccSqlHelper.ExecuteNonQuery(sql, param);
         }
+
+        public static int DeleteContactRecordByProID(int proID)
+        {
+            string sql = "delete from contactRecord where ProjectID="+proID;
+            return AccSqlHelper.ExecuteNonQuery(sql);
+        }
     }
 }

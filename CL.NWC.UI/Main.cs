@@ -153,10 +153,21 @@ namespace CL.NWC.UI
 
         private void 删除工程ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string proID = dgvProject.CurrentRow.Cells[0].Value.ToString();
-            MessageBox.Show(proID);
+           DialogResult dr=  MessageBox.Show("确定删除吗?", "删除", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+           if (dr==DialogResult.OK)
+           {
+               string proID = dgvProject.CurrentRow.Cells[0].Value.ToString();
+               if (ProjectBLL.DeleteProjectByProID(int.Parse(proID)))
+               {
+                   Common.MessageBoxShow("删除成功");
+                   BindDgvProject();
+               }
+               else
+               {
+                   Common.MessageBoxShow("删除失败");
+               }
+           }
         }
-
 
     }
 }

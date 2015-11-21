@@ -299,5 +299,11 @@ namespace CL.NWC.DAL
             string sql = sbSql.ToString();
             return AccSqlHelper.ExecuteNonQuery(sql, list.ToArray());
         }
+
+        public static int DeleteProjectByProID(int proID)
+        {
+            string sql = "delete from Projects where ProjectID="+proID;
+            return AccSqlHelper.ExecuteNonQuery(sql);
+        }
     }
 }

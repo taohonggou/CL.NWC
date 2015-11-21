@@ -29,8 +29,21 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvProject = new System.Windows.Forms.DataGridView();
+            this.projectIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.foremanNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.recordDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.shuiDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.niDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.muDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.youDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.WanDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.predictCompleteDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmsProject = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.修改工程ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.添加跟进记录ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,24 +62,12 @@
             this.txtForemanName = new System.Windows.Forms.Label();
             this.txtFormanName = new System.Windows.Forms.TextBox();
             this.dgvContactRecord = new System.Windows.Forms.DataGridView();
-            this.projectsTableAdapter = new CL.NWC.UI.CL_NWCDataSetTableAdapters.ProjectsTableAdapter();
             this.RecordID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.salesmanName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Content = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RecordDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.WanDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.predictCompleteDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.youDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.muDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.niDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.shuiDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.recordDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.foremanNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.projectIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.projectsTableAdapter = new CL.NWC.UI.CL_NWCDataSetTableAdapters.ProjectsTableAdapter();
+            this.删除工程ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProject)).BeginInit();
             this.cmsProject.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.projectsBindingSource)).BeginInit();
@@ -109,13 +110,109 @@
             this.dgvProject.TabIndex = 0;
             this.dgvProject.SelectionChanged += new System.EventHandler(this.dgvProject_SelectionChanged);
             // 
+            // projectIDDataGridViewTextBoxColumn
+            // 
+            this.projectIDDataGridViewTextBoxColumn.DataPropertyName = "ProjectID";
+            this.projectIDDataGridViewTextBoxColumn.HeaderText = "ProjectID";
+            this.projectIDDataGridViewTextBoxColumn.Name = "projectIDDataGridViewTextBoxColumn";
+            this.projectIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.projectIDDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "UserName";
+            this.Column2.HeaderText = "业务员姓名";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // foremanNameDataGridViewTextBoxColumn
+            // 
+            this.foremanNameDataGridViewTextBoxColumn.DataPropertyName = "ForemanName";
+            this.foremanNameDataGridViewTextBoxColumn.HeaderText = "工长姓名";
+            this.foremanNameDataGridViewTextBoxColumn.Name = "foremanNameDataGridViewTextBoxColumn";
+            this.foremanNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // phoneDataGridViewTextBoxColumn
+            // 
+            this.phoneDataGridViewTextBoxColumn.DataPropertyName = "Phone";
+            this.phoneDataGridViewTextBoxColumn.HeaderText = "联系方式";
+            this.phoneDataGridViewTextBoxColumn.Name = "phoneDataGridViewTextBoxColumn";
+            this.phoneDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // recordDateDataGridViewTextBoxColumn
+            // 
+            this.recordDateDataGridViewTextBoxColumn.DataPropertyName = "RecordDate";
+            dataGridViewCellStyle2.Format = "d";
+            dataGridViewCellStyle2.NullValue = null;
+            this.recordDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            this.recordDateDataGridViewTextBoxColumn.HeaderText = "建档时间";
+            this.recordDateDataGridViewTextBoxColumn.Name = "recordDateDataGridViewTextBoxColumn";
+            this.recordDateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // addressDataGridViewTextBoxColumn
+            // 
+            this.addressDataGridViewTextBoxColumn.DataPropertyName = "Address";
+            this.addressDataGridViewTextBoxColumn.HeaderText = "地址";
+            this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
+            this.addressDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "SchedeleName";
+            this.Column1.HeaderText = "施工进度";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // shuiDateDataGridViewTextBoxColumn
+            // 
+            this.shuiDateDataGridViewTextBoxColumn.DataPropertyName = "ShuiDate";
+            this.shuiDateDataGridViewTextBoxColumn.HeaderText = "水";
+            this.shuiDateDataGridViewTextBoxColumn.Name = "shuiDateDataGridViewTextBoxColumn";
+            this.shuiDateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // niDateDataGridViewTextBoxColumn
+            // 
+            this.niDateDataGridViewTextBoxColumn.DataPropertyName = "NiDate";
+            this.niDateDataGridViewTextBoxColumn.HeaderText = "泥";
+            this.niDateDataGridViewTextBoxColumn.Name = "niDateDataGridViewTextBoxColumn";
+            this.niDateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // muDateDataGridViewTextBoxColumn
+            // 
+            this.muDateDataGridViewTextBoxColumn.DataPropertyName = "MuDate";
+            this.muDateDataGridViewTextBoxColumn.HeaderText = "木";
+            this.muDateDataGridViewTextBoxColumn.Name = "muDateDataGridViewTextBoxColumn";
+            this.muDateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // youDateDataGridViewTextBoxColumn
+            // 
+            this.youDateDataGridViewTextBoxColumn.DataPropertyName = "YouDate";
+            this.youDateDataGridViewTextBoxColumn.HeaderText = "油";
+            this.youDateDataGridViewTextBoxColumn.Name = "youDateDataGridViewTextBoxColumn";
+            this.youDateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // WanDate
+            // 
+            this.WanDate.DataPropertyName = "WanDate";
+            this.WanDate.HeaderText = "完";
+            this.WanDate.Name = "WanDate";
+            this.WanDate.ReadOnly = true;
+            // 
+            // predictCompleteDateDataGridViewTextBoxColumn
+            // 
+            this.predictCompleteDateDataGridViewTextBoxColumn.DataPropertyName = "PredictCompleteDate";
+            this.predictCompleteDateDataGridViewTextBoxColumn.HeaderText = "预计终结日期";
+            this.predictCompleteDateDataGridViewTextBoxColumn.Name = "predictCompleteDateDataGridViewTextBoxColumn";
+            this.predictCompleteDateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // cmsProject
             // 
             this.cmsProject.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.修改工程ToolStripMenuItem,
-            this.添加跟进记录ToolStripMenuItem});
+            this.添加跟进记录ToolStripMenuItem,
+            this.删除工程ToolStripMenuItem});
             this.cmsProject.Name = "cmsProject";
-            this.cmsProject.Size = new System.Drawing.Size(149, 48);
+            this.cmsProject.Size = new System.Drawing.Size(153, 92);
             // 
             // 修改工程ToolStripMenuItem
             // 
@@ -267,10 +364,6 @@
             this.dgvContactRecord.Size = new System.Drawing.Size(1204, 273);
             this.dgvContactRecord.TabIndex = 3;
             // 
-            // projectsTableAdapter
-            // 
-            this.projectsTableAdapter.ClearBeforeFill = true;
-            // 
             // RecordID
             // 
             this.RecordID.DataPropertyName = "RecordID";
@@ -296,88 +389,16 @@
             this.RecordDate.HeaderText = "跟进日期";
             this.RecordDate.Name = "RecordDate";
             // 
-            // Column2
+            // projectsTableAdapter
             // 
-            this.Column2.DataPropertyName = "UserName";
-            this.Column2.HeaderText = "业务员姓名";
-            this.Column2.Name = "Column2";
+            this.projectsTableAdapter.ClearBeforeFill = true;
             // 
-            // Column1
+            // 删除工程ToolStripMenuItem
             // 
-            this.Column1.DataPropertyName = "SchedeleName";
-            this.Column1.HeaderText = "施工进度";
-            this.Column1.Name = "Column1";
-            // 
-            // WanDate
-            // 
-            this.WanDate.DataPropertyName = "WanDate";
-            this.WanDate.HeaderText = "完";
-            this.WanDate.Name = "WanDate";
-            // 
-            // predictCompleteDateDataGridViewTextBoxColumn
-            // 
-            this.predictCompleteDateDataGridViewTextBoxColumn.DataPropertyName = "PredictCompleteDate";
-            this.predictCompleteDateDataGridViewTextBoxColumn.HeaderText = "预计终结日期";
-            this.predictCompleteDateDataGridViewTextBoxColumn.Name = "predictCompleteDateDataGridViewTextBoxColumn";
-            // 
-            // youDateDataGridViewTextBoxColumn
-            // 
-            this.youDateDataGridViewTextBoxColumn.DataPropertyName = "YouDate";
-            this.youDateDataGridViewTextBoxColumn.HeaderText = "油";
-            this.youDateDataGridViewTextBoxColumn.Name = "youDateDataGridViewTextBoxColumn";
-            // 
-            // muDateDataGridViewTextBoxColumn
-            // 
-            this.muDateDataGridViewTextBoxColumn.DataPropertyName = "MuDate";
-            this.muDateDataGridViewTextBoxColumn.HeaderText = "木";
-            this.muDateDataGridViewTextBoxColumn.Name = "muDateDataGridViewTextBoxColumn";
-            // 
-            // niDateDataGridViewTextBoxColumn
-            // 
-            this.niDateDataGridViewTextBoxColumn.DataPropertyName = "NiDate";
-            this.niDateDataGridViewTextBoxColumn.HeaderText = "泥";
-            this.niDateDataGridViewTextBoxColumn.Name = "niDateDataGridViewTextBoxColumn";
-            // 
-            // shuiDateDataGridViewTextBoxColumn
-            // 
-            this.shuiDateDataGridViewTextBoxColumn.DataPropertyName = "ShuiDate";
-            this.shuiDateDataGridViewTextBoxColumn.HeaderText = "水";
-            this.shuiDateDataGridViewTextBoxColumn.Name = "shuiDateDataGridViewTextBoxColumn";
-            // 
-            // addressDataGridViewTextBoxColumn
-            // 
-            this.addressDataGridViewTextBoxColumn.DataPropertyName = "Address";
-            this.addressDataGridViewTextBoxColumn.HeaderText = "地址";
-            this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
-            // 
-            // recordDateDataGridViewTextBoxColumn
-            // 
-            this.recordDateDataGridViewTextBoxColumn.DataPropertyName = "RecordDate";
-            dataGridViewCellStyle3.Format = "d";
-            dataGridViewCellStyle3.NullValue = null;
-            this.recordDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
-            this.recordDateDataGridViewTextBoxColumn.HeaderText = "建档时间";
-            this.recordDateDataGridViewTextBoxColumn.Name = "recordDateDataGridViewTextBoxColumn";
-            this.recordDateDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // phoneDataGridViewTextBoxColumn
-            // 
-            this.phoneDataGridViewTextBoxColumn.DataPropertyName = "Phone";
-            this.phoneDataGridViewTextBoxColumn.HeaderText = "联系方式";
-            this.phoneDataGridViewTextBoxColumn.Name = "phoneDataGridViewTextBoxColumn";
-            // 
-            // foremanNameDataGridViewTextBoxColumn
-            // 
-            this.foremanNameDataGridViewTextBoxColumn.DataPropertyName = "ForemanName";
-            this.foremanNameDataGridViewTextBoxColumn.HeaderText = "工长姓名";
-            this.foremanNameDataGridViewTextBoxColumn.Name = "foremanNameDataGridViewTextBoxColumn";
-            // 
-            // projectIDDataGridViewTextBoxColumn
-            // 
-            this.projectIDDataGridViewTextBoxColumn.DataPropertyName = "ProjectID";
-            this.projectIDDataGridViewTextBoxColumn.HeaderText = "ProjectID";
-            this.projectIDDataGridViewTextBoxColumn.Name = "projectIDDataGridViewTextBoxColumn";
-            this.projectIDDataGridViewTextBoxColumn.Visible = false;
+            this.删除工程ToolStripMenuItem.Name = "删除工程ToolStripMenuItem";
+            this.删除工程ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.删除工程ToolStripMenuItem.Text = "删除工程";
+            this.删除工程ToolStripMenuItem.Click += new System.EventHandler(this.删除工程ToolStripMenuItem_Click);
             // 
             // Main
             // 
@@ -445,5 +466,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn muDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn youDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn predictCompleteDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.ToolStripMenuItem 删除工程ToolStripMenuItem;
     }
 }

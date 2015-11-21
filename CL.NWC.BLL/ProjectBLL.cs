@@ -35,5 +35,15 @@ namespace CL.NWC.BLL
          {
              return ProjectDAL.UpdateProject(pro) > 0;
          }
+
+         public static bool DeleteProjectByProID(int proID)
+         {
+             List<ContactRecord> list = ContactRecordDAL.GetContactRecordByProIDAndUserID(proID, 1);
+             if (list.Count!=0)
+             {
+                 ContactRecordDAL.DeleteContactRecordByProID(proID);
+             }
+             return ProjectDAL.DeleteProjectByProID(proID) > 0;
+         }
     }
 }

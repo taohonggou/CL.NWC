@@ -21,5 +21,10 @@ namespace CL.NWC.BLL
        {
            return ContactRecordDAL.AddContactRecord(cr) > 0;
        }
+
+       //public static int DeleteContactRecordByProID(int proID)
+       //{
+       //     return 
+       //}
     }
 }
