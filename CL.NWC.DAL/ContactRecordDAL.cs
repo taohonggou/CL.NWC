@@ -11,29 +11,66 @@ namespace CL.NWC.DAL
 {
     public class ContactRecordDAL
     {
-        private ContactRecord DRToObj(DataRow dr)
+        private static List< ContactRecord> DTToObj(DataTable dt)
         {
-            ContactRecord cr = new ContactRecord();
-            if (dr["Content"]==null||dr["Content"].ToString().Equals(""))
+            if (dt==null)
             {
-                cr.Content = "";
+                return null;
             }
-            else
+            List<ContactRecord> list = new List<ContactRecord>();
+            for (int i = 0; i < dt.Rows.Count; i++)
             {
-                cr.Content = dr["Content"].ToString();
+                
+                ContactRecord cr = new ContactRecord();
+                if (dt.Rows[i]["Content"] == null || dt.Rows[i]["Content"].ToString().Equals(""))
+                {
+                    cr.Content = "";
+                }
+                else
+                {
+                    cr.Content = dt.Rows[i]["Content"].ToString();
+                }
+                if (dt.Rows[i]["RecordDate"] == null || dt.Rows[i]["RecordDate"].ToString().Equals(""))
+                {
+                    cr.RecordDate = null;
+                }
+                else
+                {
+                    cr.RecordDate = Convert.ToDateTime(dt.Rows[i]["RecordDate"]);
+                }
+                cr.ProjectID = Convert.ToInt32(dt.Rows[i]["ProjectID"]);
+                cr.Project = ProjectDAL.GetProjectByProID(cr.ProjectID);
+                
+                cr.RecordID = Convert.ToInt32(dt.Rows[i]["RecordID"]);
+                cr.UserID = Convert.ToInt32(dt.Rows[i]["UserID"]);
+                cr.UserInfo = UserInfoDAL.GetUserByUserID(cr.UserID);
+                cr.salesmanName = cr.UserInfo.UserName;
+                list.Add(cr);
             }
-            if (dr["RecordDate"] == null || dr["RecordDate"].ToString().Equals(""))
-            {
-                cr.RecordDate = null;
-            }
-            else
-            {
-                cr.RecordDate =Convert.ToDateTime( dr["RecordDate"]);
-            }
-            cr.ProjectID = Convert.ToInt32(dr["ProjectID"]);
-            cr.RecordID = Convert.ToInt32(dr["RecordID"]);
-            cr.UserID = Convert.ToInt32(dr["UserID"]);
-            return cr;
+            return list;
+        }
+
+        public static List<ContactRecord> GetContactRecordByProIDAndUserID(int proID,int userID)
+        {
+            string sql = "select * from ContactRecord where userID=@userID and ProjectID=@ProjectID order by RecordDate desc ";
+            OleDbParameter[] param = { 
+                                     new OleDbParameter("@userID",userID),
+                                     new OleDbParameter("@ProjectID",proID)
+                                     };
+            DataTable dt = AccSqlHelper.ExecuteTable(sql, param);
+            return DTToObj(dt);
+        }
+
+        public static int AddContactRecord(ContactRecord cr)
+        {
+            string sql = "insert into ContactRecord (UserID,ProjectID,Content,RecordDate) values (@UserID,@ProjectID,@Content,@RecordDate)";
+            OleDbParameter[] param = { 
+                                     new OleDbParameter("@UserID",OleDbType.Integer){Value=cr.UserID},
+                                     new OleDbParameter("@ProjectID",OleDbType.Integer){Value=cr.ProjectID},
+                                     new OleDbParameter("@Content",OleDbType.VarChar){Value=cr.Content},
+                                     new OleDbParameter("@RecordDate",OleDbType.DBDate){Value=cr.RecordDate}
+                                     };
+            return AccSqlHelper.ExecuteNonQuery(sql, param);
         }
     }
 }

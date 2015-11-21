@@ -65,7 +65,15 @@ namespace CL.NWC.DAL
         {
             string sql = "select * from Userinfo where userID="+userID;
             DataTable dt = AccSqlHelper.ExecuteTable(sql);
-            return DTToObj(dt)[0];
+            List<UserInfo> list = DTToObj(dt);
+            if (list==null)
+            {
+                return null;
+            }
+            else
+            {
+                return list[0];
+            }
         }
     }
 }

@@ -32,7 +32,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -43,7 +42,6 @@
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.dtPredictCompleteDate = new System.Windows.Forms.DateTimePicker();
-            this.cmbSchedule = new System.Windows.Forms.ComboBox();
             this.dtRecordDate = new System.Windows.Forms.DateTimePicker();
             this.dtShuiDate = new System.Windows.Forms.DateTimePicker();
             this.dtNiDate = new System.Windows.Forms.DateTimePicker();
@@ -63,7 +61,6 @@
             this.label1.Size = new System.Drawing.Size(53, 12);
             this.label1.TabIndex = 0;
             this.label1.Text = "工长名称";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -92,19 +89,10 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "施工地址";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(61, 233);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(53, 12);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "施工进度";
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(61, 270);
+            this.label6.Location = new System.Drawing.Point(61, 225);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(77, 12);
             this.label6.TabIndex = 0;
@@ -113,7 +101,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(61, 313);
+            this.label7.Location = new System.Drawing.Point(61, 268);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(17, 12);
             this.label7.TabIndex = 0;
@@ -122,7 +110,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(61, 359);
+            this.label8.Location = new System.Drawing.Point(61, 314);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(17, 12);
             this.label8.TabIndex = 0;
@@ -131,7 +119,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(61, 404);
+            this.label9.Location = new System.Drawing.Point(61, 359);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(17, 12);
             this.label9.TabIndex = 0;
@@ -140,7 +128,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(61, 450);
+            this.label10.Location = new System.Drawing.Point(61, 405);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(17, 12);
             this.label10.TabIndex = 0;
@@ -180,27 +168,12 @@
             // 
             this.dtPredictCompleteDate.Checked = false;
             this.dtPredictCompleteDate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dtPredictCompleteDate.Location = new System.Drawing.Point(152, 264);
+            this.dtPredictCompleteDate.Location = new System.Drawing.Point(152, 219);
             this.dtPredictCompleteDate.Name = "dtPredictCompleteDate";
             this.dtPredictCompleteDate.ShowCheckBox = true;
             this.dtPredictCompleteDate.Size = new System.Drawing.Size(121, 21);
             this.dtPredictCompleteDate.TabIndex = 6;
             this.dtPredictCompleteDate.Value = new System.DateTime(2015, 11, 14, 15, 30, 30, 0);
-            // 
-            // cmbSchedule
-            // 
-            this.cmbSchedule.FormattingEnabled = true;
-            this.cmbSchedule.Items.AddRange(new object[] {
-            "还没开工",
-            "水",
-            "泥",
-            "木",
-            "油",
-            "完"});
-            this.cmbSchedule.Location = new System.Drawing.Point(152, 224);
-            this.cmbSchedule.Name = "cmbSchedule";
-            this.cmbSchedule.Size = new System.Drawing.Size(121, 20);
-            this.cmbSchedule.TabIndex = 5;
             // 
             // dtRecordDate
             // 
@@ -210,14 +183,14 @@
             this.dtRecordDate.ShowCheckBox = true;
             this.dtRecordDate.Size = new System.Drawing.Size(121, 21);
             this.dtRecordDate.TabIndex = 3;
-            this.dtRecordDate.Value = new System.DateTime(2015, 11, 14, 0, 0, 0, 0);
+            this.dtRecordDate.Value = new System.DateTime(2015, 11, 20, 0, 0, 0, 0);
             // 
             // dtShuiDate
             // 
             this.dtShuiDate.Checked = false;
             this.dtShuiDate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtShuiDate.CustomFormat = "";
-            this.dtShuiDate.Location = new System.Drawing.Point(152, 307);
+            this.dtShuiDate.Location = new System.Drawing.Point(152, 262);
             this.dtShuiDate.Name = "dtShuiDate";
             this.dtShuiDate.ShowCheckBox = true;
             this.dtShuiDate.Size = new System.Drawing.Size(121, 21);
@@ -228,7 +201,7 @@
             // 
             this.dtNiDate.Checked = false;
             this.dtNiDate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dtNiDate.Location = new System.Drawing.Point(152, 350);
+            this.dtNiDate.Location = new System.Drawing.Point(152, 305);
             this.dtNiDate.Name = "dtNiDate";
             this.dtNiDate.ShowCheckBox = true;
             this.dtNiDate.Size = new System.Drawing.Size(121, 21);
@@ -239,7 +212,7 @@
             // 
             this.dtMuDate.Checked = false;
             this.dtMuDate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dtMuDate.Location = new System.Drawing.Point(152, 398);
+            this.dtMuDate.Location = new System.Drawing.Point(152, 353);
             this.dtMuDate.Name = "dtMuDate";
             this.dtMuDate.ShowCheckBox = true;
             this.dtMuDate.Size = new System.Drawing.Size(121, 21);
@@ -250,7 +223,7 @@
             // 
             this.dtYouDate.Checked = false;
             this.dtYouDate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dtYouDate.Location = new System.Drawing.Point(152, 444);
+            this.dtYouDate.Location = new System.Drawing.Point(152, 399);
             this.dtYouDate.Name = "dtYouDate";
             this.dtYouDate.ShowCheckBox = true;
             this.dtYouDate.Size = new System.Drawing.Size(121, 21);
@@ -259,11 +232,11 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(123, 534);
+            this.btnAdd.Location = new System.Drawing.Point(123, 489);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 11;
-            this.btnAdd.Text = "确认添加";
+            this.btnAdd.Text = "确认";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
@@ -278,7 +251,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(61, 492);
+            this.label12.Location = new System.Drawing.Point(61, 447);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(17, 12);
             this.label12.TabIndex = 13;
@@ -288,7 +261,7 @@
             // 
             this.dtWanDate.Checked = false;
             this.dtWanDate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dtWanDate.Location = new System.Drawing.Point(152, 492);
+            this.dtWanDate.Location = new System.Drawing.Point(152, 447);
             this.dtWanDate.Name = "dtWanDate";
             this.dtWanDate.ShowCheckBox = true;
             this.dtWanDate.Size = new System.Drawing.Size(121, 21);
@@ -299,12 +272,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(350, 605);
+            this.ClientSize = new System.Drawing.Size(350, 564);
             this.Controls.Add(this.dtWanDate);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.cmbUser);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.cmbSchedule);
             this.Controls.Add(this.dtRecordDate);
             this.Controls.Add(this.dtYouDate);
             this.Controls.Add(this.dtMuDate);
@@ -320,7 +292,6 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -328,6 +299,7 @@
             this.Name = "AddProject";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddProject";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddProject_FormClosing);
             this.Load += new System.EventHandler(this.AddProject_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -340,7 +312,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
@@ -351,7 +322,6 @@
         private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.DateTimePicker dtPredictCompleteDate;
-        private System.Windows.Forms.ComboBox cmbSchedule;
         private System.Windows.Forms.DateTimePicker dtRecordDate;
         private System.Windows.Forms.DateTimePicker dtNiDate;
         private System.Windows.Forms.DateTimePicker dtMuDate;

@@ -121,7 +121,16 @@
               <Mapping SourceColumn="YouDate" DataSetColumn="YouDate" />
               <Mapping SourceColumn="PredictCompleteDate" DataSetColumn="PredictCompleteDate" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="CL_NWCConnectionString (Settings)" DbObjectName="Projects" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ProjectID, UserID, ForemanName, Phone, RecordDate, Address, Schedule, ShuiDate, NiDate, MuDate, YouDate, PredictCompleteDate FROM Projects</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
         </Tables>
         <Sources />
@@ -131,7 +140,7 @@
   <xs:element name="CL_NWCDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="CL_NWCDataSet" msprop:Generator_UserDSName="CL_NWCDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Projects" msprop:Generator_TableClassName="ProjectsDataTable" msprop:Generator_TableVarName="tableProjects" msprop:Generator_TablePropName="Projects" msprop:Generator_RowDeletingName="ProjectsRowDeleting" msprop:Generator_RowChangingName="ProjectsRowChanging" msprop:Generator_RowEvHandlerName="ProjectsRowChangeEventHandler" msprop:Generator_RowDeletedName="ProjectsRowDeleted" msprop:Generator_UserTableName="Projects" msprop:Generator_RowChangedName="ProjectsRowChanged" msprop:Generator_RowEvArgName="ProjectsRowChangeEvent" msprop:Generator_RowClassName="ProjectsRow">
+        <xs:element name="Projects" msprop:Generator_TableClassName="ProjectsDataTable" msprop:Generator_TableVarName="tableProjects" msprop:Generator_RowChangedName="ProjectsRowChanged" msprop:Generator_TablePropName="Projects" msprop:Generator_RowDeletingName="ProjectsRowDeleting" msprop:Generator_RowChangingName="ProjectsRowChanging" msprop:Generator_RowEvHandlerName="ProjectsRowChangeEventHandler" msprop:Generator_RowDeletedName="ProjectsRowDeleted" msprop:Generator_RowClassName="ProjectsRow" msprop:Generator_UserTableName="Projects" msprop:Generator_RowEvArgName="ProjectsRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ProjectID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnProjectID" msprop:Generator_ColumnPropNameInRow="ProjectID" msprop:Generator_ColumnPropNameInTable="ProjectIDColumn" msprop:Generator_UserColumnName="ProjectID" type="xs:int" />

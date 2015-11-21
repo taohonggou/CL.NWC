@@ -18,8 +18,22 @@ namespace CL.NWC.BLL
 
          public static bool AddProject(Project pro)
          {
-
              return ProjectDAL.AddProject(pro) > 0 ? true : false;
+         }
+
+         public static List<Project> Search(string fromanName, string address, string phone, DateTime? recordTime, int userID)
+         {
+             return ProjectDAL.Search(fromanName, address, phone, recordTime, userID);
+         }
+
+         public static Project GetProjectByProID(int proID)
+         {
+             return ProjectDAL.GetProjectByProID(proID);
+         }
+
+         public static bool UpdateProject(Project pro)
+         {
+             return ProjectDAL.UpdateProject(pro) > 0;
          }
     }
 }
